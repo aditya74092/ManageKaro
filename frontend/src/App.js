@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css'; // Import the new CSS file for styling
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_URL || 'https://collabboard-backend.onrender.com'
+    baseURL: process.env.REACT_APP_API_URL || 'https://managekaro.onrender.com'
 });
 
 // Function to set the token in the headers
