@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background-image: url('https://images.unsplash.com/photo-1581431886211-6b932f8367f2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your desired background image URL */
+  background-image: url('https://plus.unsplash.com/premium_photo-1684197414211-1f7a0807c59b?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your desired background image URL */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,25 +28,62 @@ body {
 }
 
 /* Auth Container Styles */
-.auth-container {
+/* .auth-container {
   padding: 20px;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .auth-container h1, .auth-container h3, .auth-container h4 {
   margin-bottom: 20px;
   color: #333;
-  font-family: 'Pacifico', cursive; /* Apply the cursive font to the heading */
+  /*font-family: 'Pacifico', cursive; /* Apply the cursive font to the heading */
+}
+.get-started-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-button, .secondary-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.message {
+  color: red;
+}
+
+/* .loading {
+  font-size: 14px;
+  color: blue;
+} */
+/* 
 .auth-form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 .auth-form button {
   width: 70%; /* Reduced width by 30% */
   max-width: 300px;
@@ -84,23 +121,23 @@ body {
   font-size: 1em;
 }
 
-.auth-form .auth-button {
+.auth-form {
   background-color: #007bff;
   color: #fff;
   transition: background-color 0.3s ease;
 }
 
-.auth-form .auth-button:hover {
+.auth-form  {
   background-color: #0056b3;
 }
 
-.auth-form .secondary-button {
+.auth-form {
   background-color: #6c757d;
   color: #fff;
   transition: background-color 0.3s ease;
 }
 
-.auth-form .secondary-button:hover {
+.auth-form {
   background-color: #5a6268;
 }
 

@@ -25,6 +25,7 @@ function App() {
     const [isRegistering, setIsRegistering] = useState(false);
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showAuth, setShowAuth] = useState(false);
 
     const register = async () => {
         setLoading(true);
@@ -71,25 +72,30 @@ function App() {
             <ToastContainer containerId="mainToastContainer" />
             {!isLoggedIn ? (
                 <div className="auth-container">
-                    <h3>Welcome to Collab-Board</h3>
-                    {message && <p className="message">{message}</p>}
-                    {loading && <div className="loading">Loading...</div>}
-                    {isRegistering ? (
-                        <div className="auth-form">
-                            <h2>Register</h2>
-                            <input type="text" placeholder="Username" value={user} onChange={(e) => setUsername(e.target.value)} />
-                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <button className="auth-button" onClick={register}>Register</button>
-                            <button className="secondary-button" onClick={() => { setIsRegistering(false); setMessage(''); }}>Back to Login</button>
-                        </div>
-                    ) : (
-                        <div className="auth-form">
-                            <h4>Login</h4>
-                            <input type="text" placeholder="Username" value={user} onChange={(e) => setUsername(e.target.value)} />
-                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            <button className="auth-button" onClick={login}>Login</button>
-                            <button className="secondary-button" onClick={() => { setIsRegistering(true); setMessage(''); }}>Register</button>
-                        </div>
+                    <button className="get-started-button" onClick={() => setShowAuth(true)}>Get Started</button>
+                    {showAuth && (
+                        <>
+                            <h3>Welcome to Manage-Karo</h3>
+                            {message && <p className="message">{message}</p>}
+                            {loading && <div className="loading">Loading...</div>}
+                            {isRegistering ? (
+                                <div className="auth-form">
+                                    <h2>Register</h2>
+                                    <input type="text" placeholder="Username" value={user} onChange={(e) => setUsername(e.target.value)} />
+                                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                    <button className="auth-button" onClick={register}>Register</button>
+                                    <button className="secondary-button" onClick={() => { setIsRegistering(false); setMessage(''); }}>Back to Login</button>
+                                </div>
+                            ) : (
+                                <div className="auth-form">
+                                    <h4>Login</h4>
+                                    <input type="text" placeholder="Username" value={user} onChange={(e) => setUsername(e.target.value)} />
+                                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                    <button className="auth-button" onClick={login}>Login</button>
+                                    <button className="secondary-button" onClick={() => { setIsRegistering(true); setMessage(''); }}>Register</button>
+                                </div>
+                            )}
+                        </>
                     )}
                 </div>
             ) : (

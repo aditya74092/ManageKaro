@@ -159,7 +159,7 @@ const Whiteboard = ({ onLogout }) => {
             {loading && <div className="loading">Loading...</div>}
             <header className="whiteboard-header">
                 <div className="auth-container">
-                    <h1>Collab-Board</h1>
+                    <h1>Manage-Karo</h1>
                 </div>
                 <p>Collaborate in real-time with multiple users.</p>
                 <button className="logout-button" onClick={onLogout}><FiLogOut /></button>
