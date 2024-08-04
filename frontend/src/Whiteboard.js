@@ -24,7 +24,7 @@ const Whiteboard = ({ onLogout }) => {
     const previousLineWidth = useRef(lineWidth);
 
     useEffect(() => {
-        const newSocket = io('https://collabboard-backend.onrender.com'); // Update this to your backend URL
+        const newSocket = io('https://managekaro.onrender.com'); // Update this to your backend URL
         setSocket(newSocket);
         console.log('Socket connected');
 
@@ -90,7 +90,7 @@ const Whiteboard = ({ onLogout }) => {
         const data = canvasRef.current.toDataURL();
         setLoading(true);
         try {
-            await axios.post('https://collabboard-backend.onrender.com/sessions/save', { data, roomId }, {
+            await axios.post('https://managekaro.onrender.com/sessions/save', { data, roomId }, {
                 headers: {
                     'x-auth-token': token
                 }
@@ -108,7 +108,7 @@ const Whiteboard = ({ onLogout }) => {
         const token = localStorage.getItem('token');
         setLoading(true);
         try {
-            const response = await axios.get(`https://collabboard-backend.onrender.com/sessions/load/${roomId}`, {
+            const response = await axios.get(`https://managekaro.onrender.com/sessions/load/${roomId}`, {
                 headers: {
                     'x-auth-token': token
                 }
