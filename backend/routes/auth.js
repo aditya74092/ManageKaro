@@ -4,13 +4,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://manage-karo.vercel.app');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    next();
-  });
-  
 
 // Register User
 router.post('/register', async (req, res) => {
